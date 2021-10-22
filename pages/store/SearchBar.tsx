@@ -1,7 +1,7 @@
 import { BsSearch, BsFillCartFill } from 'react-icons/bs'
 import { BiMap } from 'react-icons/bi'
 
-export default function SearchBar() {
+export default function SearchBar(props) {
   return (
     <div className="flex justify-around h-16 items-center bg-gray-900 pr-4">
       <div className="p-2 bg-gray-900 border border-transparent hover:border-white cursor-pointer">
@@ -11,7 +11,7 @@ export default function SearchBar() {
       <div className="flex border border-transparent hover:border-white cursor-pointer p-2">
         <BiMap className="text-lg self-end" />
         <div>
-          <p className="text-gray-300">Livrer à</p>
+          <p className="text-gray-300">Livrer à {props.username}</p>
           <p className="font-bold flex">Paris 75000</p>
         </div>
       </div>
@@ -29,7 +29,7 @@ export default function SearchBar() {
       </div>
 
       <div className="border border-transparent hover:border-white p-2 cursor-pointer">
-        <p className="text-gray-300">Bonjour</p>
+        <p className="text-gray-300">Bonjour, {props.username}</p>
         <p className="font-bold">Compte et listes</p>
       </div>
       <div className="border border-transparent hover:border-white p-2 cursor-pointer">
