@@ -6,51 +6,44 @@ const products = [
     rate: 5,
   },
   {
-    desc: 'Iphone 13 Pro 128 Go, Bleu alpin',
-    imgUrl: 'iphone13.png',
-    price: '1159.00€',
-    rate: 5,
+    desc: 'Lot de 3 Cartes Pokémon 1ere Edition 1996',
+    imgUrl: 'cartes-pokemon.png',
+    price: '350.00€',
+    rate: 4.5,
   },
+
   {
     desc: 'Casque Bose gris sans fil QuietComfort 35 II',
     imgUrl: 'casque-bose.jpeg',
     price: '299.99€',
     rate: 5,
   },
+
   {
-    desc: 'AirPods Pro',
-    imgUrl: 'airpods-pro.png',
-    price: '279.00€',
+    desc: 'Equipement pour Cocktail',
+    imgUrl: 'cocktail-stuff.png',
+    price: '19.99€',
     rate: 5,
   },
+
   {
     desc: 'Maillot de foot du PSG extérieur',
     imgUrl: 'maillot-psg.jpeg',
     price: '89.99€',
     rate: '5',
   },
+
   {
-    desc: 'Nike Air Force 1 "07 bleu glacier',
-    imgUrl: 'air-force1.png',
-    price: '104.95€',
+    desc: 'Iphone 13 Pro 128 Go, Bleu alpin',
+    imgUrl: 'iphone13.png',
+    price: '1159.00€',
     rate: 5,
   },
+
   {
-    desc: 'Lot de 3 Cartes Pokémon 1ere Edition 1996',
-    imgUrl: 'cartes-pokemon.png',
-    price: '350.00€',
-    rate: 4.5,
-  },
-  {
-    desc: 'Sac Louis Vuitton',
-    imgUrl: 'sac-lv.png',
-    price: '1299.00€',
-    rate: 5,
-  },
-  {
-    desc: 'Robot-Aspirateur, Roomba',
-    imgUrl: 'roomba-aspirateur.png',
-    price: '599.00€',
+    desc: 'Peluche Poro league of legends',
+    imgUrl: 'poro.png',
+    price: '18.99€',
     rate: 5,
   },
 
@@ -60,16 +53,30 @@ const products = [
     price: '121.90€',
     rate: 5,
   },
+
   {
-    desc: 'Equipement pour Cocktail',
-    imgUrl: 'cocktail-stuff.png',
-    price: '19.99€',
+    desc: 'Robot-Aspirateur, Roomba',
+    imgUrl: 'roomba-aspirateur.png',
+    price: '599.00€',
     rate: 5,
   },
   {
-    desc: 'Peluche Poro league of legends',
-    imgUrl: 'poro.png',
-    price: '18.99€',
+    desc: 'AirPods Pro',
+    imgUrl: 'airpods-pro.png',
+    price: '279.00€',
+    rate: 5,
+  },
+  {
+    desc: 'Nike Air Force 1 "07 bleu glacier',
+    imgUrl: 'air-force1.png',
+    price: '104.95€',
+    rate: 5,
+  },
+
+  {
+    desc: 'Sac Louis Vuitton',
+    imgUrl: 'sac-lv.png',
+    price: '1299.00€',
     rate: 5,
   },
 ]
