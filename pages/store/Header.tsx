@@ -1,6 +1,7 @@
 import SearchBar from './SearchBar'
 import Nav from './Nav'
 import Main from './Main'
+import Footer from './Footer'
 import { useRouter } from 'next/router'
 
 export default function Header() {
@@ -13,6 +14,7 @@ export default function Header() {
         <Nav />
       </header>
       <Main />
+      <Footer />
     </>
   )
 }
