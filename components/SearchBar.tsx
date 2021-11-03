@@ -1,12 +1,16 @@
+/* eslint-disable @next/next/link-passhref */
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link'
 import { BsSearch, BsFillCartFill } from 'react-icons/bs'
 import { BiMap } from 'react-icons/bi'
 
-export default function SearchBar() {
+function SearchBar() {
   return (
     <div className="flex justify-around h-16 items-center bg-gray-900 pr-4">
       <div className="p-2 bg-gray-900 border border-transparent hover:border-white cursor-pointer">
-        <img alt="amazon-logo" src="/amazon-logo.png" className="h-9" />
+        <Link href="/">
+          <img alt="amazon-logo" src="/amazon-logo.png" className="h-9" />
+        </Link>
       </div>
 
       <div className="flex border border-transparent hover:border-white cursor-pointer p-2">
@@ -40,8 +44,12 @@ export default function SearchBar() {
 
       <div className="flex items-end border border-transparent hover:border-white p-3 cursor-pointer">
         <BsFillCartFill className="text-2xl mr-1" />
-        <p className="font-bold">Panier</p>
+        <Link href="/cart">
+          <a className="font-bold">Panier</a>
+        </Link>
       </div>
     </div>
   )
 }
+
+export default SearchBar

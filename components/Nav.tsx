@@ -1,6 +1,6 @@
 import { FiMenu } from 'react-icons/fi'
 /* eslint-disable react/no-unescaped-entities */
-export default function Nav() {
+function Nav() {
   return (
     <nav className="bg-gray-800 h-10 flex items-center pl-3 text-sm">
       <ul className="flex text-white">
@@ -23,3 +23,5 @@ export default function Nav() {
     </nav>
   )
 }
+
+export default Nav

@@ -1,6 +1,6 @@
 import { FaTwitter, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
-export default function Footer() {
+function Footer() {
   return (
     <footer className="flex flex-col items-center pt-2 bg-gray-800 text-white h-16">
       Suivez-nous sur nos réseaux sociaux
@@ -18,3 +18,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer

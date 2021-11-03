@@ -1,7 +1,7 @@
 import SearchBar from './SearchBar'
 import Nav from './Nav'
 
-export default function Header() {
+function Header() {
   return (
     <>
       <header className=" text-white text-xs">
@@ -11,3 +11,5 @@ export default function Header() {
     </>
   )
 }
+
+export default Header
