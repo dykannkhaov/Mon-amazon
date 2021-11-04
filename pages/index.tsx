@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
 
 type Product = {
@@ -38,7 +38,7 @@ const products: Product[] = [
   },
 
   {
-    name: 'Maillot de foot du PSG extérieur',
+    name: 'Maillot de foot exterieur du PSG',
     imgUrl: 'maillot-psg.jpeg',
     price: '89.99€',
     rate: 5,
@@ -68,7 +68,7 @@ const products: Product[] = [
     name: 'Robot-Aspirateur, Roomba',
     imgUrl: 'roomba-aspirateur.png',
     price: '599.00€',
-    rate: 5,
+    rate: 4.5,
   },
   {
     name: 'AirPods Pro',
@@ -91,15 +91,15 @@ const products: Product[] = [
   },
 ]
 
-// type Star = <BsStarFill> |  <BsStarHalf> | <BsStar>
+type Star = 'full' | 'half' | 'empty'
 
-function convertToStars(rate: number, length = 5) {
+function convertToStars(rate: number, length = 5): Array<Star> {
   return Array(length)
     .fill(null)
     .map((item, index) => {
-      if (index < Math.floor(rate)) return <BsStarFill className="text-yellow-400" />
-      else if (!Number.isInteger(rate) && Math.floor(rate) === index) return <BsStarHalf className="text-yellow-400" />
-      return <BsStar key={index} className="text-yellow-400" />
+      if (index < Math.floor(rate)) return 'full'
+      else if (!Number.isInteger(rate) && Math.floor(rate) === index) return 'half'
+      return 'empty'
     })
 }
 
@@ -107,6 +107,14 @@ export default function Shopping() {
   const [cart, setCart] = useState<Array<Product>>([])
   const cartLength = cart.length
   console.log(cart)
+
+  const stars = products.map((item) =>
+    convertToStars(item.rate).map((star, index) => {
+      if (star === 'full') return <BsStarFill key={index} className="text-yellow-500" />
+      else if (star === 'half') return <BsStarHalf key={index} className="text-yellow-500" />
+      return <BsStar key={index} className="text-yellow-500" />
+    }),
+  )
 
   return (
     <>
@@ -126,7 +134,7 @@ export default function Shopping() {
             />
             <div className="pl-2 text-sm">
               <p className="font-bold">{item.name}</p>
-              <p className="flex">{convertToStars(item.rate)}</p>
+              <p className="flex">{stars[id]}</p>
               <p>{item.price}</p>
             </div>
             <button
