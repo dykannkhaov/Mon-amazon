@@ -1,13 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState, useEffect } from 'react'
+import * as React from 'react'
+import { useCart } from '../utils/context/cart-context'
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
-
-type Product = {
-  name: string
-  imgUrl: string
-  price: string
-  rate: number
-}
+import type { Product } from '../types/product'
 
 const products: Product[] = [
   {
@@ -104,26 +99,18 @@ function convertToStars(rate: number, length = 5): Array<Star> {
 }
 
 export default function Shopping() {
-  const [cart, setCart] = useState<Array<Product>>([])
-  const cartLength = cart.length
-  console.log(cart)
+  const { cart, addToCart } = useCart()
 
-  const stars = products.map((item) =>
-    convertToStars(item.rate).map((star, index) => {
-      if (star === 'full') return <BsStarFill key={index} className="text-yellow-500" />
-      else if (star === 'half') return <BsStarHalf key={index} className="text-yellow-500" />
-      return <BsStar key={index} className="text-yellow-500" />
-    }),
-  )
+  console.log(cart)
 
   return (
     <>
-      <div className="pt-4 pl-8">
-        <h1 className="font-bold text-2xl mb-1">Notre sélection pour vous</h1>
-        <hr className="border-gray-500"></hr>
+      <div className="pt-4">
+        <h1 className="font-bold text-2xl mb-1 text-center">Your suggestions</h1>
+        <hr className="border-gray-400"></hr>
       </div>
 
-      <div className="flex flex-wrap pt-4 pl-8">
+      <div className="flex flex-wrap pt-4 lg:pl-8 justify-center">
         {products.map((item, id) => (
           <ul key={id} className="flex flex-col border w-80 mb-4">
             <img
@@ -134,17 +121,22 @@ export default function Shopping() {
             />
             <div className="pl-2 text-sm">
               <p className="font-bold">{item.name}</p>
-              <p className="flex">{stars[id]}</p>
+              <p className="flex">
+                {convertToStars(item.rate).map((star, index) => {
+                  if (star === 'full') return <BsStarFill key={index} className="text-yellow-500" />
+                  else if (star === 'half') return <BsStarHalf key={index} className="text-yellow-500" />
+                  return <BsStar key={index} className="text-yellow-500" />
+                })}
+              </p>
               <p>{item.price}</p>
             </div>
             <button
               className="bg-green-600 text-white text-sm mt-2 p-2 rounded self-center"
               onClick={() => {
-                // setCart((oldCart) => [...oldCart, item])
-                setCart([...cart, item])
+                addToCart(item)
               }}
             >
-              Ajouter au panier
+              Add to cart
             </button>
           </ul>
         ))}
@@ -152,5 +144,3 @@ export default function Shopping() {
     </>
   )
 }
-
-// type Star, key uniquement pour BsStar, ajouter la note devant les etoies ?
