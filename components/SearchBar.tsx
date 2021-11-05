@@ -54,7 +54,7 @@ function SearchBar() {
         <Link href="/cart">
           <a className="font-bold">Cart</a>
         </Link>
-        <span className="ml-1 font-bold">({cart.length})</span>
+        <span className="font-bold">({cart.length})</span>
       </div>
     </div>
   )

@@ -6,61 +6,61 @@ import type { Product } from '../types/product'
 
 const products: Product[] = [
   {
-    name: 'Macbook Pro édition 2020, 13 pouces',
+    name: 'MacBook Pro M1 2020, 13-inch',
     imgUrl: 'macbook-pro.png',
     price: '1449.00€',
     rate: 5,
   },
   {
-    name: 'Lot de 3 Cartes Pokémon 1ere Edition 1996',
+    name: 'Pokemon Base Set First Edition 1996',
     imgUrl: 'cartes-pokemon.png',
     price: '350.00€',
     rate: 5,
   },
 
   {
-    name: 'Casque Bose gris sans fil QuietComfort 35 II',
+    name: 'Bose QuietComfort 35 II Headphones',
     imgUrl: 'casque-bose.jpeg',
     price: '299.99€',
     rate: 4.5,
   },
 
   {
-    name: 'Equipement pour Cocktail',
+    name: 'Stuff for Cocktails',
     imgUrl: 'cocktail-stuff.png',
     price: '19.99€',
     rate: 3.5,
   },
 
   {
-    name: 'Maillot de foot exterieur du PSG',
+    name: 'PSG away jersey',
     imgUrl: 'maillot-psg.jpeg',
     price: '89.99€',
     rate: 5,
   },
 
   {
-    name: 'Peluche Poro league of legends',
+    name: 'League of legends Poro',
     imgUrl: 'poro.png',
     price: '18.99€',
     rate: 4,
   },
   {
-    name: 'Iphone 13 Pro 128 Go, Bleu alpin',
+    name: 'Iphone 13 Pro 128 GB, Sierra Blue',
     imgUrl: 'iphone13.png',
     price: '1159.00€',
     rate: 5,
   },
 
   {
-    name: 'Souris Logitech G903',
+    name: 'Logitech G903 Mouse',
     imgUrl: 'souris-logitech.png',
     price: '121.90€',
     rate: 4,
   },
 
   {
-    name: 'Robot-Aspirateur, Roomba',
+    name: 'Robot vacuum cleaner, Roomba',
     imgUrl: 'roomba-aspirateur.png',
     price: '599.00€',
     rate: 4.5,
@@ -72,14 +72,14 @@ const products: Product[] = [
     rate: 5,
   },
   {
-    name: 'Nike Air Force 1 "07 bleu glacier',
+    name: 'Nike Air Force 1 "07 blue fury',
     imgUrl: 'air-force1.png',
     price: '104.95€',
     rate: 4.5,
   },
 
   {
-    name: 'Sac Louis Vuitton',
+    name: 'Louis Vuitton Handbag',
     imgUrl: 'sac-lv.png',
     price: '1299.00€',
     rate: 5,
@@ -110,7 +110,7 @@ export default function Shopping() {
         <hr className="border-gray-400"></hr>
       </div>
 
-      <div className="flex flex-wrap pt-4 lg:pl-8 justify-center">
+      <div className="flex flex-wrap pt-4 justify-center">
         {products.map((item, id) => (
           <ul key={id} className="flex flex-col border w-80 mb-4">
             <img
