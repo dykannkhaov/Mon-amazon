@@ -5,9 +5,11 @@ import Link from 'next/link'
 import { BsSearch, BsFillCartFill } from 'react-icons/bs'
 import { BiMap } from 'react-icons/bi'
 import { useCart } from '../utils/context/cart-context'
+import { useProduct } from '../utils/context/product-context'
 
 function SearchBar() {
   const { cart } = useCart()
+  const { updateDisplayedProducts } = useProduct()
 
   return (
     <div className="flex justify-around h-16 items-center bg-gray-900 pr-4">
@@ -26,7 +28,12 @@ function SearchBar() {
       </div>
 
       <div className="flex h-10">
-        <select className="bg-gray-200 text-gray-700 px-2 rounded-tl-md cursor-pointer hover:bg-gray-300 hover:text-black">
+        <select
+          className="bg-gray-200 text-gray-700 px-2 rounded-tl-md cursor-pointer hover:bg-gray-300 hover:text-black"
+          onChange={(e) => {
+            updateDisplayedProducts(e)
+          }}
+        >
           <option>All</option>
           <option>Electronic</option>
           <option>Clothes</option>

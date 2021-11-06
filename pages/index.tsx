@@ -1,90 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import { useCart } from '../utils/context/cart-context'
+import { useProduct } from '../utils/context/product-context'
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
-import type { Product } from '../types/product'
-
-const products: Product[] = [
-  {
-    name: 'MacBook Pro M1 2020, 13-inch',
-    imgUrl: 'macbook-pro.png',
-    price: '1449.00€',
-    rate: 5,
-  },
-  {
-    name: 'Pokemon Base Set First Edition 1996',
-    imgUrl: 'cartes-pokemon.png',
-    price: '350.00€',
-    rate: 5,
-  },
-
-  {
-    name: 'Bose QuietComfort 35 II Headphones',
-    imgUrl: 'casque-bose.jpeg',
-    price: '299.99€',
-    rate: 4.5,
-  },
-
-  {
-    name: 'Stuff for Cocktails',
-    imgUrl: 'cocktail-stuff.png',
-    price: '19.99€',
-    rate: 3.5,
-  },
-
-  {
-    name: 'PSG away jersey',
-    imgUrl: 'maillot-psg.jpeg',
-    price: '89.99€',
-    rate: 5,
-  },
-
-  {
-    name: 'League of legends Poro',
-    imgUrl: 'poro.png',
-    price: '18.99€',
-    rate: 4,
-  },
-  {
-    name: 'Iphone 13 Pro 128 GB, Sierra Blue',
-    imgUrl: 'iphone13.png',
-    price: '1159.00€',
-    rate: 5,
-  },
-
-  {
-    name: 'Logitech G903 Mouse',
-    imgUrl: 'souris-logitech.png',
-    price: '121.90€',
-    rate: 4,
-  },
-
-  {
-    name: 'Robot vacuum cleaner, Roomba',
-    imgUrl: 'roomba-aspirateur.png',
-    price: '599.00€',
-    rate: 4.5,
-  },
-  {
-    name: 'AirPods Pro',
-    imgUrl: 'airpods-pro.png',
-    price: '279.00€',
-    rate: 5,
-  },
-  {
-    name: 'Nike Air Force 1 "07 blue fury',
-    imgUrl: 'air-force1.png',
-    price: '104.95€',
-    rate: 4.5,
-  },
-
-  {
-    name: 'Louis Vuitton Handbag',
-    imgUrl: 'sac-lv.png',
-    price: '1299.00€',
-    rate: 5,
-  },
-]
 
 type Star = 'full' | 'half' | 'empty'
 
@@ -99,9 +17,8 @@ function convertToStars(rate: number, length = 5): Array<Star> {
 }
 
 export default function Shopping() {
-  const { cart, addToCart } = useCart()
-
-  console.log(cart)
+  const { addToCart } = useCart()
+  const { displayedProducts } = useProduct()
 
   return (
     <>
@@ -111,7 +28,7 @@ export default function Shopping() {
       </div>
 
       <div className="flex flex-wrap pt-4 justify-center">
-        {products.map((item, id) => (
+        {displayedProducts.map((item, id) => (
           <ul key={id} className="flex flex-col border w-80 mb-4">
             <img
               src={`/${item.imgUrl}`}
