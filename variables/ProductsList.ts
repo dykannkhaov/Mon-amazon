@@ -20,12 +20,12 @@ const products: Product[] = [
     name: 'Bose QuietComfort 35 II Headphones',
     price: '299.99€',
     category: 'Electronic',
-    imgUrl: 'casque-bose.jpeg',
+    imgUrl: 'casque-bose.png',
     rate: 4.5,
   },
 
   {
-    name: 'Stuff for Cocktails',
+    name: 'Equipment for Cocktails',
     price: '29.99€',
     category: 'Others',
     imgUrl: 'cocktail-stuff.png',
@@ -36,7 +36,7 @@ const products: Product[] = [
     name: 'PSG Away Jersey',
     price: '89.99€',
     category: 'Clothes',
-    imgUrl: 'maillot-psg.jpeg',
+    imgUrl: 'maillot-psg.png',
     rate: 5,
   },
 
