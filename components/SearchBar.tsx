@@ -12,18 +12,18 @@ function SearchBar() {
   const { updateDisplayedProducts } = useProduct()
 
   return (
-    <div className="flex justify-around h-16 items-center bg-gray-900 pr-4">
+    <div className="flex justify-around h-16 items-center bg-gray-900 md:pr-4">
       <div className="p-2 bg-gray-900 border border-transparent hover:border-white cursor-pointer">
         <Link href="/">
           <img alt="amazon-logo" src="/amazon-logo.png" className="h-9" />
         </Link>
       </div>
 
-      <div className="flex border border-transparent hover:border-white cursor-pointer p-2">
+      <div className="sm:flex border border-transparent hover:border-white cursor-pointer p-2 hidden">
         <BiMap className="text-lg self-end" />
         <div>
           <p className="text-gray-300">Deliver to Guest</p>
-          <p className="font-bold flex">Paris 75000</p>
+          <p className="font-bold">Paris 75000</p>
         </div>
       </div>
 
@@ -47,11 +47,11 @@ function SearchBar() {
         </div>
       </div>
 
-      <div className="border border-transparent hover:border-white p-2 cursor-pointer">
+      <div className="sm:block border border-transparent hover:border-white p-2 cursor-pointer hidden">
         <p className="text-gray-300">Hello, Guest</p>
         <p className="font-bold">Account & Lists</p>
       </div>
-      <div className="border border-transparent hover:border-white p-2 cursor-pointer">
+      <div className="hidden md:block border border-transparent hover:border-white p-2 cursor-pointer">
         <p className="text-gray-300">Returns</p>
         <p className="font-bold">& Orders</p>
       </div>

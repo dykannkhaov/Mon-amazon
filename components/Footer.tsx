@@ -2,7 +2,7 @@ import { FaTwitter, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 function Footer() {
   return (
-    <footer className="flex flex-col items-center pt-2 bg-gray-800 text-white h-16">
+    <footer className="flex flex-col md:text-base text-sm items-center pt-2 bg-gray-800 text-white h-16">
       Suivez-nous sur nos réseaux sociaux
       <div className="flex text-2xl mt-1">
         <a href="https://twitter.com/amazon" target="_blank" rel="noreferrer">

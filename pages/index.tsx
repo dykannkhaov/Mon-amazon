@@ -29,14 +29,14 @@ export default function Shopping() {
 
       <div className="flex flex-wrap pt-4 justify-center">
         {displayedProducts.map((item, id) => (
-          <ul key={id} className="flex flex-col border w-80 mb-4">
+          <ul key={id} className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4">
             <img
               src={`/${item.imgUrl}`}
-              style={{ height: '250px', width: '250px' }}
+              style={{ height: '200px', width: '200px' }}
               className="self-center"
               alt={item.name}
             />
-            <div className="pl-2 text-sm">
+            <div className="pl-2 sm:text-sm text-xs">
               <p className="font-bold">{item.name}</p>
               <p className="flex">
                 {convertToStars(item.rate).map((star, index) => {
@@ -46,9 +46,17 @@ export default function Shopping() {
                 })}
               </p>
               <p>{item.price}</p>
+              <button
+                className="bg-green-600 text-white text-xs p-2 rounded mt-3 block md:hidden"
+                onClick={() => {
+                  addToCart(item)
+                }}
+              >
+                Add to cart
+              </button>
             </div>
             <button
-              className="bg-green-600 text-white text-sm mt-2 p-2 rounded self-center"
+              className="bg-green-600 text-white text-sm mt-2 p-2 rounded self-center md:block hidden"
               onClick={() => {
                 addToCart(item)
               }}
