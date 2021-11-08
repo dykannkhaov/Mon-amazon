@@ -26,14 +26,14 @@ const products: Product[] = [
 
   {
     name: 'Stuff for Cocktails',
-    price: '19.99€',
+    price: '29.99€',
     category: 'Others',
     imgUrl: 'cocktail-stuff.png',
-    rate: 3.5,
+    rate: 3,
   },
 
   {
-    name: 'PSG away jersey',
+    name: 'PSG Away Jersey',
     price: '89.99€',
     category: 'Clothes',
     imgUrl: 'maillot-psg.jpeg',
@@ -56,10 +56,10 @@ const products: Product[] = [
   },
 
   {
-    name: 'Logitech G903 Mouse',
-    price: '121.90€',
-    category: 'Electronic',
-    imgUrl: 'souris-logitech.png',
+    name: 'Nike unisex, White cap',
+    price: '12.99€',
+    category: 'Clothes',
+    imgUrl: 'cap.png',
     rate: 4,
   },
 
@@ -78,7 +78,7 @@ const products: Product[] = [
     rate: 5,
   },
   {
-    name: 'Nike Air Force 1 "07 blue fury',
+    name: 'Nike Air Force 1 "07 Blue Fury',
     price: '104.95€',
     category: 'Clothes',
     imgUrl: 'air-force1.png',
@@ -91,6 +91,36 @@ const products: Product[] = [
     category: 'Clothes',
     imgUrl: 'sac-lv.png',
     rate: 5,
+  },
+
+  {
+    name: 'Logitech G903 Mouse',
+    price: '121.90€',
+    category: 'Electronic',
+    imgUrl: 'souris-logitech.png',
+    rate: 4,
+  },
+
+  {
+    name: 'Bookcase storage, Dark Walnut',
+    price: '75.99€',
+    category: 'Others',
+    imgUrl: 'bookcase.png',
+    rate: 4,
+  },
+  {
+    name: 'Dumbbbells (15LB)',
+    price: '40.50€',
+    category: 'Others',
+    imgUrl: 'dumbbells.png',
+    rate: 4,
+  },
+  {
+    name: 'Hollister, Black short for men',
+    price: '15.00€',
+    category: 'Clothes',
+    imgUrl: 'short.png',
+    rate: 3.5,
   },
 ]
 
