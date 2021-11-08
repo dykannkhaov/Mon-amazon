@@ -26,9 +26,9 @@ const products: Product[] = [
 
   {
     name: 'Equipment for Cocktails',
-    price: '29.99€',
+    price: '49.99€',
     category: 'Others',
-    imgUrl: 'cocktail-stuff.png',
+    imgUrl: 'cocktail.png',
     rate: 3,
   },
 
@@ -109,8 +109,8 @@ const products: Product[] = [
     rate: 4,
   },
   {
-    name: 'Dumbbbells (15LB)',
-    price: '40.50€',
+    name: 'Dumbbbells (2-3-5-8-12LB)',
+    price: '149.99€',
     category: 'Others',
     imgUrl: 'dumbbells.png',
     rate: 4,
