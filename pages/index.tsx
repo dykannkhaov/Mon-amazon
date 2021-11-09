@@ -21,51 +21,55 @@ export default function Shopping() {
   const { displayedProducts } = useProduct()
 
   return (
-    <>
-      <div className="pt-4">
-        <h1 className="font-bold text-2xl mb-1 text-center">Your suggestions</h1>
-        <hr className="border-gray-400"></hr>
-      </div>
+    <main>
+      <img src="pub.png" className="w-full sm:h-auto h-20 mb-4" />
 
-      <div className="flex flex-wrap pt-4 justify-center">
-        {displayedProducts.map((item, id) => (
-          <ul key={id} className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4">
-            <img
-              src={`/${item.imgUrl}`}
-              style={{ height: '200px', width: '200px' }}
-              className="self-center"
-              alt={item.name}
-            />
-            <div className="pl-2 sm:text-sm text-xs">
-              <p className="font-bold">{item.name}</p>
-              <p className="flex">
-                {convertToStars(item.rate).map((star, index) => {
-                  if (star === 'full') return <BsStarFill key={index} className="text-yellow-500" />
-                  else if (star === 'half') return <BsStarHalf key={index} className="text-yellow-500" />
-                  return <BsStar key={index} className="text-yellow-500" />
-                })}
-              </p>
-              <p>{item.price}</p>
+      <div>
+        <div>
+          <h1 className="font-bold text-2xl mb-1 text-center">Your suggestions</h1>
+          <hr className="border-gray-400"></hr>
+        </div>
+
+        <div className="flex flex-wrap pt-4 justify-center">
+          {displayedProducts.map((item, id) => (
+            <ul key={id} className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4">
+              <img
+                src={`/${item.imgUrl}`}
+                style={{ height: '200px', width: '200px' }}
+                className="self-center"
+                alt={item.name}
+              />
+              <div className="pl-2 sm:text-sm text-xs">
+                <p className="font-bold">{item.name}</p>
+                <p className="flex">
+                  {convertToStars(item.rate).map((star, index) => {
+                    if (star === 'full') return <BsStarFill key={index} className="text-yellow-500" />
+                    else if (star === 'half') return <BsStarHalf key={index} className="text-yellow-500" />
+                    return <BsStar key={index} className="text-yellow-500" />
+                  })}
+                </p>
+                <p>{item.price}</p>
+                <button
+                  className="bg-green-600 text-white text-xs p-2 rounded mt-3 block md:hidden"
+                  onClick={() => {
+                    addToCart(item)
+                  }}
+                >
+                  Add to cart
+                </button>
+              </div>
               <button
-                className="bg-green-600 text-white text-xs p-2 rounded mt-3 block md:hidden"
+                className="bg-green-600 text-white text-sm mt-2 p-2 rounded self-center md:block hidden"
                 onClick={() => {
                   addToCart(item)
                 }}
               >
                 Add to cart
               </button>
-            </div>
-            <button
-              className="bg-green-600 text-white text-sm mt-2 p-2 rounded self-center md:block hidden"
-              onClick={() => {
-                addToCart(item)
-              }}
-            >
-              Add to cart
-            </button>
-          </ul>
-        ))}
+            </ul>
+          ))}
+        </div>
       </div>
-    </>
+    </main>
   )
 }

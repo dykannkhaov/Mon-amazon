@@ -94,14 +94,6 @@ const products: Product[] = [
   },
 
   {
-    name: 'Logitech G903 Mouse',
-    price: '121.90€',
-    category: 'Electronic',
-    imgUrl: 'souris-logitech.png',
-    rate: 4,
-  },
-
-  {
     name: 'Bookcase storage, Dark Walnut',
     price: '75.99€',
     category: 'Others',
