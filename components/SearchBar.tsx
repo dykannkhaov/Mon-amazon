@@ -5,11 +5,11 @@ import Link from 'next/link'
 import { BsSearch, BsFillCartFill } from 'react-icons/bs'
 import { BiMap } from 'react-icons/bi'
 import { useCart } from '../utils/context/cart-context'
-import { useProduct } from '../utils/context/product-context'
+import { useProducts } from '../utils/context/product-context'
 
 function SearchBar() {
   const { cart } = useCart()
-  const { updateDisplayedProducts } = useProduct()
+  const { updateDisplayedProducts } = useProducts()
 
   return (
     <div className="flex justify-around h-16 items-center bg-gray-900 md:pr-4">
@@ -56,12 +56,12 @@ function SearchBar() {
         <p className="font-bold">& Orders</p>
       </div>
 
-      <div className="flex items-end border border-transparent hover:border-white p-3 cursor-pointer">
+      <div className="flex items-end border border-transparent hover:border-white p-3 cursor-pointer text-sm">
         <BsFillCartFill className="text-2xl mr-1" />
         <Link href="/cart">
-          <a className="font-bold">Cart</a>
+          <a className="font-bold mr-1">Cart</a>
         </Link>
-        <span className="font-bold">({cart.length})</span>
+        <span className="font-bold text-yellow-500">({cart.length})</span>
       </div>
     </div>
   )
