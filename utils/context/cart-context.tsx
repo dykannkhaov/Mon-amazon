@@ -9,7 +9,14 @@ type CartProviderValue = {
 const context = React.createContext<CartProviderValue | undefined>(undefined)
 
 function CartProvider(props) {
-  const [cart, setCart] = React.useState<Array<Product>>([])
+  const [cart, setCart] = React.useState<Array<Product>>(() => {
+    if (typeof window === 'undefined') return []
+    return JSON.parse(localStorage.getItem('cart')) ?? []
+  })
+
+  React.useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
 
   const addToCart = (item: Product) => {
     setCart((oldCart) => [...oldCart, item])

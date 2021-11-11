@@ -10,15 +10,9 @@ export default function Shopping() {
 
   return (
     <main>
-      {/* <img
-        src="ad.png"
-        alt="amazon-ad"
-        className={`w-full sm:h-auto h-20 mb-4 ${displayedProducts.length < 15 ? '2xl:hidden' : ''}`}
-      /> */}
       <img src="ad.png" alt="amazon-ad" className="w-full sm:h-auto h-20 mb-4" />
-
       <div>
-        <h1 className="font-bold text-2xl mb-1 text-center 2xl:pt-2">Your suggestions</h1>
+        <h1 className="font-bold text-2xl mb-1 text-center 2xl:pt-1">Your suggestions</h1>
         <hr className="border-gray-400"></hr>
       </div>
 
@@ -55,7 +49,7 @@ export default function Shopping() {
           </ul>
         ))}
       </div>
-      {displayedProducts.length < 15 ? <img src="sales.jpg" alt="amazon-ad" className="2xl:inline hidden" /> : null}
+      {displayedProducts.length < 15 ? <img src="sales.jpg" alt="amazon-ad" className="lg:inline hidden" /> : null}
     </main>
   )
 }
