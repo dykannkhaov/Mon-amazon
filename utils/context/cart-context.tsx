@@ -4,6 +4,8 @@ import type { Product } from '../../types/product'
 type CartProviderValue = {
   cart: Array<Product>
   addToCart: (item: Product) => void
+  deleteItemCart: (item) => void
+  emptyCart: () => void
 }
 
 const context = React.createContext<CartProviderValue | undefined>(undefined)
@@ -22,7 +24,17 @@ function CartProvider(props) {
     setCart((oldCart) => [...oldCart, item])
   }
 
-  return <context.Provider value={{ cart, addToCart }}>{props.children}</context.Provider>
+  const deleteItemCart = (item) => {
+    const itemToDelete = item
+    const newCart = cart.filter((item, index) => item !== itemToDelete)
+    setCart(newCart)
+  }
+
+  const emptyCart = () => {
+    setCart([])
+  }
+
+  return <context.Provider value={{ cart, addToCart, deleteItemCart, emptyCart }}>{props.children}</context.Provider>
 }
 
 function useCart() {

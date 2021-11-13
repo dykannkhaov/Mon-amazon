@@ -1,7 +1,7 @@
 type Product = {
   name: string
   imgUrl: string
-  price: string
+  price: number
   rate: number
   category: string
 }

@@ -15,8 +15,8 @@ function ProductProvider(props) {
   const router = useRouter()
 
   const updateDisplayedProducts = (e) => {
-    const newDisplayedProducts = products.filter((item) => item.category === e.currentTarget.value)
     // router.push(e.currentTarget.value)
+    const newDisplayedProducts = products.filter((item) => item.category === e.currentTarget.value)
     setDisplayedProducts(newDisplayedProducts)
     if (e.currentTarget.value === 'All') setDisplayedProducts(products)
   }

@@ -13,7 +13,7 @@ export default function Shopping() {
       <img src="ad.png" alt="amazon-ad" className="w-full sm:h-auto h-20 mb-4" />
       <div>
         <h1 className="font-bold text-2xl mb-1 text-center 2xl:pt-1">Your suggestions</h1>
-        <hr className="border-gray-400"></hr>
+        <hr className="border-gray-400" />
       </div>
 
       <div className="flex flex-wrap pt-4 justify-center">
@@ -27,13 +27,11 @@ export default function Shopping() {
             />
             <div className="pl-2 sm:text-sm text-xs">
               <p className="font-bold">{item.name}</p>
-              <p>{item.price}</p>
+              <p>{item.price}€</p>
               <Rating rate={item.rate} />
               <button
                 className="bg-green-600 text-white text-xs p-2 rounded mt-3 block md:hidden"
-                onClick={() => {
-                  addToCart(item)
-                }}
+                onClick={() => addToCart(item)}
               >
                 Add to cart
               </button>
@@ -49,7 +47,7 @@ export default function Shopping() {
           </ul>
         ))}
       </div>
-      {displayedProducts.length < 15 ? <img src="sales.jpg" alt="amazon-ad" className="lg:inline hidden" /> : null}
+      {displayedProducts.length < 15 ? <img src="sales.jpg" alt="amazon-ad" className="2xl:inline hidden" /> : null}
     </main>
   )
 }
