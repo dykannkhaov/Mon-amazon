@@ -87,7 +87,7 @@ function Cart() {
         </div>
       </div>
       <div>
-        <img src="gift.png" alt="gift.png" className="sm:inline-block hidden" />
+        <img src="gift.png" alt="gift.png" />
       </div>
     </section>
   )
