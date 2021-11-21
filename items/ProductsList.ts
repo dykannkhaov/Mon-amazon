@@ -3,7 +3,7 @@ import type { Product } from '../types/product'
 const products: Product[] = [
   {
     name: 'MacBook Pro M1 2020, 13-inch',
-    price: ' 149.99',
+    price: ' 1149.99',
     category: 'Electronic',
     isRecommended: false,
     imgUrl: 'macbook-pro.png',
@@ -20,7 +20,7 @@ const products: Product[] = [
 
   {
     name: 'Bose QuietComfort 35 II Headphones',
-    price: ' 99.99',
+    price: ' 299.99',
     category: 'Electronic',
     isRecommended: false,
     imgUrl: 'casque-bose.png',
@@ -81,7 +81,7 @@ const products: Product[] = [
   },
   {
     name: 'AirPods Pro',
-    price: ' 279.99',
+    price: '279.99',
     category: 'Electronic',
     isRecommended: true,
     imgUrl: 'airpods-pro.png',
@@ -98,7 +98,7 @@ const products: Product[] = [
 
   {
     name: 'Louis Vuitton Handbag',
-    price: ' 300.00',
+    price: ' 1300.00',
     category: 'Clothes',
     isRecommended: false,
     imgUrl: 'sac-lv.png',

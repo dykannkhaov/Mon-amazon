@@ -54,7 +54,7 @@ function Cart() {
 
           <div className="md:flex md:flex-col py-3 lg:pl-4 lg:pr-8 bg-white xl:rounded-lg border border-gray-300">
             <p className="lg:pl-0 pl-3 text-sm font-bold mb-3 sm:mb-2 text-center">Your recently viewed items</p>
-            <div className="sm:flex xl:block sm:justify-around flex flex-wrap justify-center">
+            <div className="sm:flex xl:block sm:justify-around flex flex-wrap justify-evenly">
               {recommendedProducts.map((product, index) => (
                 <ul
                   key={index}
