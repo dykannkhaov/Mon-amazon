@@ -39,7 +39,10 @@ function SearchBar() {
           <option>Clothes</option>
           <option>Others</option>
         </select>
-        <input type="text" className="lg:inline xl:w-144 lg:w-80 hidden pl-2 text-black border-l border-gray-300" />
+        <input
+          type="text"
+          className="lg:inline xl:w-[576px] lg:w-[320px] hidden pl-2 text-black border-l border-gray-300"
+        />
         <div className="lg:flex hidden justify-center border-none text-black bg-yellow-400 w-10 rounded-br-md cursor-pointer hover:bg-yellow-500">
           <button>
             <BsSearch className="text-xl" />

@@ -1,9 +1,10 @@
 type Product = {
   name: string
-  imgUrl: string
   price: string
-  rate: number
   category: string
+  isRecommended: boolean
+  imgUrl: string
+  rate: number
 }
 
 export type { Product }
