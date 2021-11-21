@@ -41,7 +41,7 @@ const products: Product[] = [
   },
 
   {
-    name: 'League of legends Poro',
+    name: 'Arcane Poro',
     price: '18.99',
     category: 'Others',
     imgUrl: 'poro.png',
