@@ -10,9 +10,9 @@ export default function Shopping() {
 
   return (
     <main>
-      <img src="ad.png" alt="amazon-ad" className="w-full sm:h-auto h-20 mb-4" />
+      <img src="ad.png" alt="amazon-ad" className="w-full sm:h-auto h-20 mb-2" />
       <div>
-        <h1 className="font-bold text-2xl mb-1 text-center 2xl:pt-1">Your suggestions</h1>
+        <h1 className="font-bold text-2xl mb-1 text-center">Your suggestions</h1>
         <hr className="border-gray-400" />
       </div>
 
