@@ -4,7 +4,7 @@ import type { Product } from '../../types/product'
 type CartProviderValue = {
   cart: Array<Product>
   addToCart: (item: Product) => void
-  deleteItemCart: (item) => void
+  deleteItemCart: (item: Product) => void
   emptyCart: () => void
 }
 
@@ -21,12 +21,16 @@ function CartProvider(props) {
   }, [cart])
 
   const addToCart = (item: Product) => {
-    setCart((oldCart) => [...oldCart, item])
+    const newItem = {
+      ...item,
+      id: Date.now(),
+    }
+    setCart((oldCart) => [newItem, ...oldCart])
   }
 
-  const deleteItemCart = (item) => {
-    const itemToDelete = item
-    const newCart = cart.filter((item, index) => item !== itemToDelete)
+  const deleteItemCart = (item: Product) => {
+    const itemToDelete = item.id
+    const newCart = cart.filter((item, index) => item.id !== itemToDelete)
     setCart(newCart)
   }
 

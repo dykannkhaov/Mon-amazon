@@ -5,6 +5,7 @@ type Product = {
   isRecommended: boolean
   imgUrl: string
   rate: number
+  id: number
 }
 
 export type { Product }
