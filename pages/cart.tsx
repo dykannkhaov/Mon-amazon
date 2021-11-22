@@ -46,7 +46,7 @@ function Cart() {
         <div>
           <div className="bg-white xl:mb-2 p-1">
             <p className="xl:mt-0 mt-1 pl-2 lg:pl-3 xl:pl-1">
-              Subtotal ({cart.length}):
+              Subtotal ({cart.length} items):
               <span className="font-bold ml-1">{totalCart}€</span>
             </p>
           </div>

@@ -8,6 +8,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'macbook-pro.png',
     rate: 5,
+    id: 0,
   },
   {
     name: 'Pokemon Base Set First Edition 1996',
@@ -16,6 +17,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'cartes-pokemon.png',
     rate: 5,
+    id: 0,
   },
 
   {
@@ -25,6 +27,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'casque-bose.png',
     rate: 4.5,
+    id: 0,
   },
 
   {
@@ -34,6 +37,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'cocktail.png',
     rate: 3,
+    id: 0,
   },
 
   {
@@ -43,6 +47,7 @@ const products: Product[] = [
     isRecommended: true,
     imgUrl: 'maillot-psg.png',
     rate: 5,
+    id: 0,
   },
 
   {
@@ -52,6 +57,7 @@ const products: Product[] = [
     isRecommended: true,
     imgUrl: 'poro.png',
     rate: 4,
+    id: 0,
   },
   {
     name: 'Iphone 13 Pro 128 GB, Sierra Blue',
@@ -60,6 +66,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'iphone13.png',
     rate: 5,
+    id: 0,
   },
 
   {
@@ -69,6 +76,7 @@ const products: Product[] = [
     isRecommended: true,
     imgUrl: 'cap.png',
     rate: 4,
+    id: 0,
   },
 
   {
@@ -78,6 +86,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'roomba-aspirateur.png',
     rate: 4.5,
+    id: 0,
   },
   {
     name: 'AirPods Pro',
@@ -86,6 +95,7 @@ const products: Product[] = [
     isRecommended: true,
     imgUrl: 'airpods-pro.png',
     rate: 5,
+    id: 0,
   },
   {
     name: 'Nike Air Force 1 "07 Blue Fury',
@@ -94,6 +104,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'air-force1.png',
     rate: 4.5,
+    id: 0,
   },
 
   {
@@ -103,6 +114,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'sac-lv.png',
     rate: 5,
+    id: 0,
   },
 
   {
@@ -112,6 +124,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'bookcase.png',
     rate: 4,
+    id: 0,
   },
   {
     name: 'Dumbbbells (2-3-5-8-12LB)',
@@ -120,6 +133,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'dumbbells.png',
     rate: 4,
+    id: 0,
   },
   {
     name: 'Hollister, Black short for men',
@@ -128,6 +142,7 @@ const products: Product[] = [
     isRecommended: false,
     imgUrl: 'short.png',
     rate: 3.5,
+    id: 0,
   },
 ]
 
