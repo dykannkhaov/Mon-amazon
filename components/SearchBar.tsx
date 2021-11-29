@@ -8,16 +8,16 @@ import { useCart } from '../utils/context/cart-context'
 import { useProducts } from '../utils/context/product-context'
 
 function SearchBar() {
-  const { cart } = useCart()
+  const { cartLength } = useCart()
   const { updateDisplayedProducts } = useProducts()
 
   return (
     <div className="flex justify-around h-16 items-center bg-gray-900 md:pr-4">
-      <div className="p-2 bg-gray-900 border border-transparent hover:border-white cursor-pointer">
-        <Link href="/">
+      <Link href="/">
+        <div className="p-2 bg-gray-900 border border-transparent hover:border-white cursor-pointer">
           <img alt="amazon-logo" src="/amazon-logo.png" className="h-9" />
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       <div className="sm:flex border border-transparent hover:border-white cursor-pointer p-2 hidden">
         <BiMap className="text-lg self-end" />
@@ -59,13 +59,13 @@ function SearchBar() {
         <p className="font-bold">& Orders</p>
       </div>
 
-      <div className="flex items-end border border-transparent hover:border-white p-3 cursor-pointer text-sm">
-        <BsFillCartFill className="text-2xl mr-1" />
-        <Link href="/cart">
+      <Link href="/cart">
+        <div className="flex items-end border border-transparent hover:border-white p-3 cursor-pointer text-sm">
+          <BsFillCartFill className="text-2xl mr-1" />
           <a className="font-bold mr-1">Cart</a>
-        </Link>
-        <span className="font-bold text-yellow-500">({cart.length})</span>
-      </div>
+          <span className="font-bold text-yellow-500">({cartLength})</span>
+        </div>
+      </Link>
     </div>
   )
 }
