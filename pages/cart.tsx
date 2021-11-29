@@ -12,7 +12,7 @@ function Cart() {
   return (
     <section className="bg-gray-200">
       <div className="flex xl:flex-row flex-col lg:justify-around xl:pt-6 xl:mb-8 xl:mx-2">
-        <div className="self-start pt-4 px-4 bg-white xl:w-9/12 w-full xl:pb-4 overflow-scroll xl:h-[566px] h-[364px]">
+        <div className="self-start pt-4 px-4 bg-white xl:w-9/12 w-full xl:pb-4 overflow-scroll xl:h-[566px] h-[367px]">
           <div className="flex justify-between mb-2 pr-1">
             <h2 className="text-2xl font-semibold lg:pl-1 xl:pl-0">Shopping Cart</h2>
             <button className="p-1 bg-red-500 rounded" onClick={emptyCart}>
@@ -28,9 +28,9 @@ function Cart() {
           ) : (
             cart.map((item, id) => (
               <ul key={id} className="text-sm flex justify-between items-center border pr-1">
-                <img src={`/${item.imgUrl}`} alt={item.name} className="w-[100px] h-[100px]" />
+                <img src={`/${item.imgUrl}`} alt={item.name} className="sm:w-[100px] sm:h-[100px] w-[75px] h-[75px]" />
                 <li className="">{item.quantity}</li>
-                <li className="w-40">{item.name}</li>
+                <li className="w-36">{item.name}</li>
                 <li>{item.price}€</li>
                 <button className="border bg-gray-100" onClick={() => deleteItemCart(item)}>
                   X
