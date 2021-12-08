@@ -2,11 +2,10 @@
 import * as React from 'react'
 import Rating from '../components/Rating'
 import { useCart } from '../utils/context/cart-context'
-import { useProducts } from '../utils/context/product-context'
+import { products } from '../items/ProductsList'
 
 export default function Shopping() {
   const { addToCart } = useCart()
-  const { displayedProducts } = useProducts()
 
   return (
     <main>
@@ -17,7 +16,7 @@ export default function Shopping() {
       </div>
 
       <div className="flex flex-wrap pt-4 justify-center">
-        {displayedProducts.map((item, id) => (
+        {products.map((item, id) => (
           <ul key={id} className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4">
             <img
               src={`/${item.imgUrl}`}
@@ -47,7 +46,6 @@ export default function Shopping() {
           </ul>
         ))}
       </div>
-      {displayedProducts.length < 15 ? <img src="sales.jpg" alt="amazon-ad" className="2xl:inline hidden" /> : null}
     </main>
   )
 }

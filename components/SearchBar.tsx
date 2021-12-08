@@ -4,12 +4,15 @@ import * as React from 'react'
 import Link from 'next/link'
 import { BsSearch, BsFillCartFill } from 'react-icons/bs'
 import { BiMap } from 'react-icons/bi'
+import { useRouter } from 'next/router'
 import { useCart } from '../utils/context/cart-context'
-import { useProducts } from '../utils/context/product-context'
 
 function SearchBar() {
   const { cartLength } = useCart()
-  const { updateDisplayedProducts } = useProducts()
+  const router = useRouter()
+
+  const category = (router.query.category as string) ?? ''
+  const urlCategory = category.charAt(0).toUpperCase() + category.slice(1)
 
   return (
     <div className="flex justify-around h-16 items-center bg-gray-900 md:pr-4">
@@ -29,9 +32,11 @@ function SearchBar() {
 
       <div className="flex h-10">
         <select
+          value={urlCategory}
           className="bg-gray-200 text-gray-700 px-2 rounded-tl-md cursor-pointer hover:bg-gray-300 hover:text-black"
           onChange={(e) => {
-            updateDisplayedProducts(e)
+            if (e.currentTarget.value === 'All') router.push('/')
+            else router.push(e.currentTarget.value.toLowerCase())
           }}
         >
           <option>All</option>
