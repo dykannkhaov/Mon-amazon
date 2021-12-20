@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Dykann Khaov Amazon</title>
         <link rel="icon" href="amazon.ico" />
       </Head>
       <CartProvider>
