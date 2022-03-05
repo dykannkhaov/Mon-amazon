@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import Rating from '../components/Rating'
+import Link from 'next/link'
 import { useCart } from '../utils/context/cart-context'
-import { useRouter } from 'next/router'
 import { products } from '../items/ProductsList'
 import { concatenateForUrl } from '../utils/concatenateForUrl'
 
@@ -10,7 +10,6 @@ const recommendedProducts = products.filter((product) => product.isRecommended)
 
 function Cart() {
   const { cart, cartLength, cartTotal, addToCart, deleteItemCart, emptyCart } = useCart()
-  const router = useRouter()
 
   return (
     <section className="bg-gray-200">
@@ -31,12 +30,15 @@ function Cart() {
           ) : (
             cart.map((item, id) => (
               <ul key={id} className="text-sm flex justify-between items-center border pr-1">
-                <img
-                  src={`/${item.imgUrl}`}
-                  alt={item.name}
-                  className="sm:w-[100px] sm:h-[100px] w-[75px] h-[75px] cursor-pointer"
-                  onClick={(e) => router.push(`/description/${concatenateForUrl(e.currentTarget.alt)}`)}
-                />
+                <Link href={`/description/${concatenateForUrl(item.name)}`}>
+                  <a>
+                    <img
+                      src={`/${item.imgUrl}`}
+                      alt={item.name}
+                      className="sm:w-[100px] sm:h-[100px] w-[75px] h-[75px] cursor-pointer"
+                    />
+                  </a>
+                </Link>
                 <li className="">{item.quantity}</li>
                 <li className="w-36">{item.name}</li>
                 <li>{item.price}€</li>
@@ -62,12 +64,15 @@ function Cart() {
               {recommendedProducts.map((product, index) => (
                 <ul key={index} className="xl:flex xl:text-left sm:block flex items-center sm:text-center text-sm mb-1">
                   <div>
-                    <img
-                      src={product.imgUrl}
-                      alt={product.name}
-                      className="sm:w-[100px] sm:h-[100px] w-[90px] h-[90px] cursor-pointer"
-                      onClick={(e) => router.push(`/description/${concatenateForUrl(e.currentTarget.alt)}`)}
-                    />
+                    <Link href={`/description/${concatenateForUrl(product.name)}`}>
+                      <a>
+                        <img
+                          src={product.imgUrl}
+                          alt={product.name}
+                          className="sm:w-[100px] sm:h-[100px] w-[90px] h-[90px] cursor-pointer"
+                        />
+                      </a>
+                    </Link>
                   </div>
                   <div>
                     <li>{product.name}</li>

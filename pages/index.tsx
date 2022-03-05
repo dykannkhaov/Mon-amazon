@@ -1,14 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import Rating from '../components/Rating'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { useCart } from '../utils/context/cart-context'
 import { useQuery } from 'react-query'
 import { concatenateForUrl } from '../utils/concatenateForUrl'
 
 export default function Home() {
   const { addToCart } = useCart()
-  const router = useRouter()
 
   const { data: products, status } = useQuery({
     queryKey: 'products',
@@ -25,16 +24,14 @@ export default function Home() {
         <hr className="border-gray-400" />
       </div>
 
-      <div className="flex flex-wrap pt-4 justify-center">
+      <ul className="flex flex-wrap pt-4 justify-center">
         {products.map((item, id) => (
-          <ul key={id} className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4">
-            <img
-              src={`/${item.imgUrl}`}
-              style={{ height: '200px', width: '200px' }}
-              className="self-center cursor-pointer"
-              alt={item.name}
-              onClick={(e) => router.push(`/description/${concatenateForUrl(e.currentTarget.alt)}`)}
-            />
+          <li key={id} className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4">
+            <Link href={`/description/${concatenateForUrl(item.name)}`}>
+              <a className="self-center cursor-pointer">
+                <img src={`/${item.imgUrl}`} style={{ height: '200px', width: '200px' }} alt={item.name} />
+              </a>
+            </Link>
             <div className="pl-2 sm:text-sm text-xs">
               <p className="font-bold">{item.name}</p>
               <p>{item.price}€</p>
@@ -54,9 +51,9 @@ export default function Home() {
             >
               Add to cart
             </button>
-          </ul>
+          </li>
         ))}
-      </div>
+      </ul>
     </main>
   )
 }

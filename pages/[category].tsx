@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link'
 import Rating from '../components/Rating'
 import { useRouter } from 'next/router'
 import { useCart } from '../utils/context/cart-context'
@@ -24,19 +25,14 @@ function Shopping() {
         <hr className="border-gray-400" />
       </div>
 
-      <div className="flex flex-wrap pt-4 justify-center">
+      <ul className="flex flex-wrap pt-4 justify-center">
         {products.map((item, id) => (
-          <ul
-            key={id}
-            className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4 cursor-pointer"
-          >
-            <img
-              src={`/${item.imgUrl}`}
-              style={{ height: '200px', width: '200px' }}
-              className="self-center"
-              alt={item.name}
-              onClick={(e) => router.push(`/description/${concatenateForUrl(e.currentTarget.alt)}`)}
-            />
+          <li key={id} className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4">
+            <Link href={`/description/${concatenateForUrl(item.name)}`}>
+              <a className="self-center cursor-pointer">
+                <img src={`/${item.imgUrl}`} style={{ height: '200px', width: '200px' }} alt={item.name} />
+              </a>
+            </Link>
             <div className="pl-2 sm:text-sm text-xs">
               <p className="font-bold">{item.name}</p>
               <p>{item.price}€</p>
@@ -56,9 +52,9 @@ function Shopping() {
             >
               Add to cart
             </button>
-          </ul>
+          </li>
         ))}
-      </div>
+      </ul>
       {products.length === 5 ? <img src="sales.jpg" alt="amazon-ad" className="2xl:inline hidden" /> : null}
     </main>
   )
