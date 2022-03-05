@@ -1,11 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import Rating from '../components/Rating'
-import { useProducts } from '../utils/context/product-context'
+import { useRouter } from 'next/router'
 import { useCart } from '../utils/context/cart-context'
+import { useQuery } from 'react-query'
+import { concatenateForUrl } from '../utils/concatenateForUrl'
 
-function Category() {
+function Shopping() {
   const { addToCart } = useCart()
-  const { displayedProducts } = useProducts()
+  const router = useRouter()
+
+  const { data: products, status } = useQuery({
+    queryKey: ['products', router.query.category],
+    queryFn: () => fetch(`/api/products/${router.query.category}`).then((res) => res.json()),
+  })
+
+  if (status === 'loading') return <h1>LOADING...</h1>
 
   return (
     <main>
@@ -16,13 +25,17 @@ function Category() {
       </div>
 
       <div className="flex flex-wrap pt-4 justify-center">
-        {displayedProducts.map((item, id) => (
-          <ul key={id} className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4">
+        {products.map((item, id) => (
+          <ul
+            key={id}
+            className="md:flex-col md:items-start flex items-center border w-full md:w-80 mb-4 cursor-pointer"
+          >
             <img
               src={`/${item.imgUrl}`}
               style={{ height: '200px', width: '200px' }}
               className="self-center"
               alt={item.name}
+              onClick={(e) => router.push(`/description/${concatenateForUrl(e.currentTarget.alt)}`)}
             />
             <div className="pl-2 sm:text-sm text-xs">
               <p className="font-bold">{item.name}</p>
@@ -46,8 +59,9 @@ function Category() {
           </ul>
         ))}
       </div>
-      {displayedProducts.length === 5 ? <img src="sales.jpg" alt="amazon-ad" className="2xl:inline hidden" /> : null}
+      {products.length === 5 ? <img src="sales.jpg" alt="amazon-ad" className="2xl:inline hidden" /> : null}
     </main>
   )
 }
-export default Category
+
+export default Shopping

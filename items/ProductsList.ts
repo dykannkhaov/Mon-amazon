@@ -2,7 +2,7 @@ import type { Product } from '../types/product'
 
 const products: Product[] = [
   {
-    name: 'MacBook Pro M1 2020, 13-inch',
+    name: 'MacBook Pro M1 2020 13-inch',
     price: ' 1149.99',
     category: 'Electronic',
     isRecommended: false,
@@ -54,7 +54,7 @@ const products: Product[] = [
     rate: 4,
   },
   {
-    name: 'Iphone 13 Pro 128 GB, Sierra Blue',
+    name: 'Iphone 13 Pro 128 GB Sierra Blue',
     price: ' 1159.99',
     category: 'Electronic',
     isRecommended: false,
@@ -63,7 +63,7 @@ const products: Product[] = [
   },
 
   {
-    name: 'Nike, White cap',
+    name: 'Nike White cap',
     price: '12.99',
     category: 'Clothes',
     isRecommended: true,
@@ -72,7 +72,7 @@ const products: Product[] = [
   },
 
   {
-    name: 'Robot vacuum cleaner, Roomba',
+    name: 'Robot vacuum cleaner Roomba',
     price: ' 599.99',
     category: 'Electronic',
     isRecommended: false,
@@ -106,7 +106,7 @@ const products: Product[] = [
   },
 
   {
-    name: 'Bookcase storage, Dark Walnut',
+    name: 'Bookcase storage Dark Walnut',
     price: '75.99',
     category: 'Others',
     isRecommended: false,
@@ -114,7 +114,7 @@ const products: Product[] = [
     rate: 4,
   },
   {
-    name: 'Dumbbbells (2-3-5-8-12LB)',
+    name: 'Dumbbbells (2-3-5-8-12 LB)',
     price: ' 149.99',
     category: 'Others',
     isRecommended: false,
@@ -122,7 +122,7 @@ const products: Product[] = [
     rate: 4,
   },
   {
-    name: 'Hollister, Black short for men',
+    name: 'Hollister Black short for men',
     price: '15.99',
     category: 'Clothes',
     isRecommended: false,

@@ -1,11 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react'
 import Rating from '../components/Rating'
+import { useRouter } from 'next/router'
 import { useCart } from '../utils/context/cart-context'
-import { products } from '../items/ProductsList'
+import { useQuery } from 'react-query'
+import { concatenateForUrl } from '../utils/concatenateForUrl'
 
-export default function Shopping() {
+export default function Home() {
   const { addToCart } = useCart()
+  const router = useRouter()
+
+  const { data: products, status } = useQuery({
+    queryKey: 'products',
+    queryFn: () => fetch('/api/products').then((res) => res.json()),
+  })
+
+  if (status === 'loading') return <h1>LOADING...</h1>
 
   return (
     <main>
@@ -21,8 +31,9 @@ export default function Shopping() {
             <img
               src={`/${item.imgUrl}`}
               style={{ height: '200px', width: '200px' }}
-              className="self-center"
+              className="self-center cursor-pointer"
               alt={item.name}
+              onClick={(e) => router.push(`/description/${concatenateForUrl(e.currentTarget.alt)}`)}
             />
             <div className="pl-2 sm:text-sm text-xs">
               <p className="font-bold">{item.name}</p>
