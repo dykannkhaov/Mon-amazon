@@ -88,7 +88,7 @@ const products: Product[] = [
     rate: 5,
   },
   {
-    name: 'Nike Air Force 1 "07 Blue Fury',
+    name: "Nike Air Force 1 '07 Blue Fury",
     price: '104.95',
     category: 'Clothes',
     isRecommended: false,
