@@ -36,7 +36,7 @@ function SearchBar() {
           className="bg-gray-200 text-gray-700 px-2 rounded-tl-md cursor-pointer hover:bg-gray-300 hover:text-black"
           onChange={(e) => {
             if (e.currentTarget.value === 'All') router.push('/')
-            else router.push(e.currentTarget.value.toLowerCase())
+            else router.push(`/${e.currentTarget.value.toLowerCase()}`)
           }}
         >
           <option>All</option>

@@ -24,6 +24,6 @@ export function middleware(req: NextRequest) {
     if (req.url.startsWith('/description') && isAProduct) return NextResponse.next()
 
     // redirect to index when isInCategory === false and isAProduct === false
-    if (!isInCategory) return NextResponse.redirect('/')
+    if (!isInCategory || (isInCategory && req.url.startsWith('/description'))) return NextResponse.redirect('/')
   }
 }
